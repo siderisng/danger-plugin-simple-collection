@@ -2,15 +2,14 @@
  * A collection of danger plugins
  */
 
-import { schedule } from 'danger';
 import mentor from 'danger-plugin-mentor';
 import jiraIssue from 'danger-plugin-jira-issue';
 
-import eslint from './config/danger/eslint';
-import jestCoverage from './config/danger/coverage';
-import getCustomReporting from './config/danger/packageReport';
+// import eslint from './plugins/eslint';
+import jestCoverage from './plugins//coverage';
+import getCustomReporting from './plugins/packageReport';
 
-import paths from './config/paths';
+// import paths from './config/paths';
 
 export default function simpleCollection() {
   jestCoverage();
@@ -26,7 +25,7 @@ export default function simpleCollection() {
   });
 
   mentor();
-  eslint(paths.eslintConfig);
+  // eslint(paths.eslintConfig);
 
   schedule(getCustomReporting());
 }
