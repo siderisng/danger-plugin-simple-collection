@@ -1,0 +1,3 @@
+import simpleCollection from './'
+
+simpleCollection()
