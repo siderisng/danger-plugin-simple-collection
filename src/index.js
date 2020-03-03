@@ -1,3 +1,4 @@
+/* global schedule */
 /**
  * A collection of danger plugins
  */
@@ -5,17 +6,24 @@
 import mentor from 'danger-plugin-mentor';
 import jiraIssue from 'danger-plugin-jira-issue';
 
-// import eslint from './plugins/eslint';
-import jestCoverage from './plugins//coverage';
+import eslint from './plugins/eslint';
+import jestCoverage from './plugins/coverage';
 import getCustomReporting from './plugins/packageReport';
 
-// import paths from './config/paths';
+export default function simpleCollection({
+  jiraKey,
+  jiraUrl = 'https://travelexdigital.atlassian.net/browse',
+  reportsPath = 'reports/danger',
+  eslintPath, 
+} = {}) {
 
-export default function simpleCollection() {
-  jestCoverage();
+  if (!jiraKey) return console.error('===== No JIRA key specified. This is required. ======')
+  if (!jiraUrl) return console.error('===== No JIRA workspace url specified. This is required. =====')
+
+  jestCoverage(reportsPath);
   jiraIssue({
-    key: 'FW',
-    url: 'https://travelexdigital.atlassian.net/browse',
+    key: jiraKey,
+    url: jiraUrl,
     emoji: ':paperclip:',
     format(emoji, jiraUrls) {
       // Optional Formatter
@@ -25,7 +33,8 @@ export default function simpleCollection() {
   });
 
   mentor();
-  // eslint(paths.eslintConfig);
+
+  // if (eslintPath) eslint(eslintPath)
 
   schedule(getCustomReporting());
 }

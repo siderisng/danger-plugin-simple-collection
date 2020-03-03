@@ -7,8 +7,8 @@ import generateMarkdownTable from 'markdown-table';
 
 const rootDir = process.cwd();
 const getFileAbsolutePath = filePath => path.join(rootDir, filePath);
-const coverageFilePath = getFileAbsolutePath('reports/danger/coverage-current.json');
-const coverageFilePathPrev = getFileAbsolutePath('reports/danger/coverage-develop.json');
+let coverageFilePath = getFileAbsolutePath('reports/danger/coverage-current.json');
+let coverageFilePathPrev = getFileAbsolutePath('reports/danger/coverage-develop.json');
 class CoverageParser {
   constructor() {
     this.getFileCoverageStats = filePath => {
@@ -37,9 +37,6 @@ class CoverageParser {
     return fs.existsSync(path);
   }
 }
-
-const coverageParser = new CoverageParser();
-const coverageParserPrev = new CoverageParser();
 
 const roundPercentage = num => Math.round(num * 100) / 100;
 const formatCoverageState = (stat, prevStat) => {
@@ -97,8 +94,15 @@ const shouldFileHaveCoverage = file =>
   !includes(file, '__mocks__/') &&
   !includes(file, '__stories__/');
 
-export default function jestCoverage() {
+export default function jestCoverage(reportsPath = 'reports/danger') {
   const { git } = danger;
+
+  coverageFilePath = getFileAbsolutePath(reportsPath = '/coverage-current.json');
+  coverageFilePathPrev = getFileAbsolutePath(reportsPath = '/coverage-develop.json');
+
+  const coverageParser = new CoverageParser();
+  const coverageParserPrev = new CoverageParser();
+
   if (coverageParser.coverageFileExists() && coverageParserPrev.coverageFileExists(coverageFilePathPrev)) {
     coverageParser.parse();
     coverageParserPrev.parse(coverageFilePathPrev);
