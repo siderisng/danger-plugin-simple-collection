@@ -6,7 +6,7 @@
 import mentor from 'danger-plugin-mentor';
 import jiraIssue from 'danger-plugin-jira-issue';
 
-import eslint from './plugins/eslint';
+// import eslint from './plugins/eslint';
 import jestCoverage from './plugins/coverage';
 import getCustomReporting from './plugins/packageReport';
 
@@ -14,7 +14,7 @@ export default function simpleCollection({
   jiraKey,
   jiraUrl = 'https://travelexdigital.atlassian.net/browse',
   reportsPath = 'reports/danger',
-  eslintPath, 
+  // eslintPath, 
 } = {}) {
 
   if (!jiraKey) return console.error('===== No JIRA key specified. This is required. ======')
