@@ -6,6 +6,7 @@
 import mentor from 'danger-plugin-mentor';
 import jiraIssue from 'danger-plugin-jira-issue';
 import noConsole from 'danger-plugin-no-console'
+import npmAudit from "danger-plugin-npm-audit";
 
 // import eslint from './plugins/eslint';
 import jestCoverage from './plugins/coverage';
@@ -39,5 +40,7 @@ export default function simpleCollection({
 
   schedule(getCustomReporting());
 
-  schedule(noConsole())
+  schedule(noConsole());
+
+  schedule(npmAudit());
 }
