@@ -5,6 +5,7 @@
 
 import mentor from 'danger-plugin-mentor';
 import jiraIssue from 'danger-plugin-jira-issue';
+import noConsole from 'danger-plugin-no-console'
 
 // import eslint from './plugins/eslint';
 import jestCoverage from './plugins/coverage';
@@ -37,4 +38,6 @@ export default function simpleCollection({
   // if (eslintPath) eslint(eslintPath)
 
   schedule(getCustomReporting());
+
+  schedule(noConsole())
 }
