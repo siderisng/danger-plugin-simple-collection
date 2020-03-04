@@ -17,10 +17,13 @@ export default function simpleCollection({
   jiraUrl,
   reportsPath = 'reports/danger',
   // eslintPath, 
+  noConsoleWhitelist = ['error', 'warn'],
 } = {}) {
 
   if (!jiraKey) return console.error('===== No JIRA key specified. This is required. ======')
   if (!jiraUrl) return console.error('===== No JIRA workspace url specified. This is required. =====')
+
+  const whitelist = { whitelist: noConsoleWhitelist };
 
   jestCoverage(reportsPath);
   jiraIssue({
@@ -40,7 +43,7 @@ export default function simpleCollection({
 
   schedule(getCustomReporting());
 
-  schedule(noConsole());
+  schedule(noConsole(whitelist));
 
   schedule(npmAudit());
 }
