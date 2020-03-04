@@ -8,11 +8,20 @@
 
 ## Usage
 
-Install:
+Install with Yarn:
 
 ```sh
 yarn add danger-plugin-simple-collection --dev
 ```
+
+Install with Npm:
+
+```sh
+npm i danger-plugin-simple-collection --save-dev
+```
+
+You need to have setup an env variable `DANGER_GITHUB_API_TOKEN` with a value of a GitHub api token that has access to write on the repo you are en-danger-ing
+
 
 Use this on your project's dangerfile.js:
 
@@ -30,7 +39,9 @@ const options = {
 simpleCollection(options);
 ```
 
-Use this on your CI's shell commands: The below example is for Jenkins, change accordingly for the CI of your preference.
+Use this on your CI's job shell command: The below example is for a Jenkins (with gh pull request builder) job, change accordingly for the CI of your preference.
+
+More information [here](https://danger.systems/js/guides/getting_started.html)
 
 ```bash
 # Create folder structure
