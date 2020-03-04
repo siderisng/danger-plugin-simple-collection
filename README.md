@@ -8,13 +8,13 @@
 
 ## Usage
 
-Install with Yarn:
+Install with *Yarn*:
 
 ```sh
 yarn add danger-plugin-simple-collection --dev
 ```
 
-Install with Npm:
+Install with *npm*:
 
 ```sh
 npm i danger-plugin-simple-collection --save-dev
@@ -23,7 +23,7 @@ npm i danger-plugin-simple-collection --save-dev
 You need to have setup an env variable `DANGER_GITHUB_API_TOKEN` with a value of a GitHub api token that has access to write on the repo you are en-danger-ing
 
 
-Use this on your project's dangerfile.js:
+Use this on your project's `dangerfile.js` (in root folder):
 
 ```js
 // dangerfile.js
