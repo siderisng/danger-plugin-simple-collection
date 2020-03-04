@@ -14,7 +14,7 @@ import getCustomReporting from './plugins/packageReport';
 
 export default function simpleCollection({
   jiraKey,
-  jiraUrl = 'https://travelexdigital.atlassian.net/browse',
+  jiraUrl,
   reportsPath = 'reports/danger',
   // eslintPath, 
 } = {}) {
