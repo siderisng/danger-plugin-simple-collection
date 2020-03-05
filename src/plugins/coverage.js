@@ -94,7 +94,7 @@ const shouldFileHaveCoverage = file =>
   !includes(file, '__mocks__/') &&
   !includes(file, '__stories__/');
 
-export default function jestCoverage(reportsPath = 'reports/danger') {
+export default function coverage(reportsPath = 'reports/danger') {
   const { git } = danger;
 
   coverageFilePath = getFileAbsolutePath(reportsPath = '/coverage-current.json');

@@ -1,3 +1,0 @@
-import simpleCollection from './'
-
-simpleCollection()
