@@ -23,8 +23,10 @@ export default function simpleCollection({
   disabled = {},
 } = {}) {
 
-  if (!jiraKey) return console.error(jiraKeyError)
-  if (!jiraUrl) return console.error(jiraUrlError)
+  if (!disabled.jiraIssue){
+    if (!jiraKey) return console.error(jiraKeyError)
+    if (!jiraUrl) return console.error(jiraUrlError)
+  }
 
   const whitelist = { whitelist: noConsoleWhitelist };
 
