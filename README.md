@@ -73,6 +73,8 @@ yarn danger ci
 
 - [danger-plugin-npm-audit](https://github.com/revathskumar/danger-plugin-npm-audit)
 
+- [danger-plugin-npm-outdated](https://github.com/revathskumar/danger-plugin-npm-outdated)
+
 - Unit testing code coverage report (used code from [danger-plugin-istanbul-coverage](https://github.com/darcy-rayner/danger-plugin-istanbul-coverage))
 
 ## Changelog
