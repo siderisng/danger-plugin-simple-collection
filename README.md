@@ -33,7 +33,7 @@ const options = {
   jiraKey: 'FA', // required, key used for JIRA tickets eg. FA-123
   jiraUrl: 'https://<ORG_NAME>.atlassian.net/browse', // required, url to the account's/organization's JIRA home
   reportsPath: 'reports/danger', // optional default is reports/danger
-  noConsoleWhitelist: ['warn', 'error'] // optional, whitelist options for console calls, possible options log,warn,info,error
+  noConsoleWhitelist: ['warn', 'error'], // optional, whitelist options for console calls, possible options log,warn,info,error
   disabled: { // optional, disable some plugins, options are listed in example below
     coverage: false,
     jiraIssue: false,
