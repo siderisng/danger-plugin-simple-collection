@@ -97,8 +97,8 @@ const shouldFileHaveCoverage = file =>
 export default function coverage(reportsPath = 'reports/danger') {
   const { git } = danger;
 
-  coverageFilePath = getFileAbsolutePath(reportsPath = '/coverage-current.json');
-  coverageFilePathPrev = getFileAbsolutePath(reportsPath = '/coverage-develop.json');
+  coverageFilePath = getFileAbsolutePath(reportsPath + '/coverage-current.json');
+  coverageFilePathPrev = getFileAbsolutePath(reportsPath + '/coverage-develop.json');
 
   const coverageParser = new CoverageParser();
   const coverageParserPrev = new CoverageParser();
