@@ -45,8 +45,6 @@ More information [here](https://danger.systems/js/guides/getting_started.html)
 
 ```bash
 # Create folder structure
-rm -f coverage-*.tar.gz
-rm -rf reports
 mkdir -p reports/danger # input folder needs to be the same as reportsPath in the configuration, note how this folder is referenced below too
 
 # Run tests on develop
