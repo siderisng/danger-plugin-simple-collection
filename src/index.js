@@ -6,17 +6,16 @@
 import mentor from 'danger-plugin-mentor';
 import jiraIssue from 'danger-plugin-jira-issue';
 import noConsole from 'danger-plugin-no-console'
-import npmAudit from "danger-plugin-npm-audit";
+import npmOutdated from "danger-plugin-npm-outdated";
 
-// import eslint from './plugins/eslint';
 import jestCoverage from './plugins/coverage';
 import getCustomReporting from './plugins/packageReport';
+import npmAudit from './plugins/audit';
 
 export default function simpleCollection({
   jiraKey,
   jiraUrl,
   reportsPath = 'reports/danger',
-  // eslintPath, 
   noConsoleWhitelist = ['error', 'warn'],
 } = {}) {
 
@@ -46,4 +45,6 @@ export default function simpleCollection({
   schedule(noConsole(whitelist));
 
   schedule(npmAudit());
+
+  schedule(npmOutdated())
 }
