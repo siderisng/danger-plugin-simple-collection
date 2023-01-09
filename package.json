@@ -45,7 +45,7 @@
     "byzantine": "^1.1.0",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^2.0.0",
-    "danger": "^9.2.10",
+    "danger": "^11.2.1",
     "danger-plugin-jira-issue": "^1.4.1",
     "danger-plugin-mentor": "^2.0.0",
     "danger-plugin-no-console": "^1.1.2",
